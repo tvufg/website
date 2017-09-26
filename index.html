@@ -84,9 +84,9 @@
         left: -20px;
         top: 33px;
         border-radius: 50%;
-        animation: ex4 0.7s infinit;
-        -moz-animation: ex4 0.7s infinit;
-        -webkit-animation: ex4 0.7s infinit;
+        animation: ex4 0.7s infinite;
+        -moz-animation: ex4 0.7s infinite;
+        -webkit-animation: ex4 0.7s infinite;
         box-shadow: 0px 0px 8px 0px red;
       }
 
@@ -222,9 +222,27 @@
 
       $('.navbar-toggler').click(function() {
         $('nav').addClass("show-menu");
-
         $('.collapse').addClass("show");
       });
+
+      // Obtém a data/hora atual
+      var data = new Date();
+
+      // Exemplo de instrução para "pegar" a próxima data
+      // data.setDate(data.getDate() + 1);
+
+      // Guarda cada pedaço em uma variável
+      var dia     = data.getDate();           // 1-31
+      var dia_sem = data.getDay();            // 0-6 (zero=domingo)
+      var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+      var ano2    = data.getYear();           // 2 dígitos
+      var ano4    = data.getFullYear();       // 4 dígitos
+      var hora    = data.getHours();          // 0-23
+      var min     = data.getMinutes();        // 0-59
+      var seg     = data.getSeconds();        // 0-59
+      var mseg    = data.getMilliseconds();   // 0-999
+      var tz      = data.getTimezoneOffset(); // em minutos
+      
     });
     </script>
 
