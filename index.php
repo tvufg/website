@@ -213,7 +213,7 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="height: 500px; background-color: #EEEEEE;">
+    <div class="container-fluid" style="height: 500px; background-image: url(assets/img/jeremy-perkins-269027.jpg); background-size: cover; background-position: center center;">
       <div class="container" style="height: inherit;">
         <div class="row" style="height: inherit;">
           <div class="col-md-6 my-auto">
@@ -222,7 +222,7 @@
             <h3 id="titulo" style="font-size: 28px; font-weight: 500;"></h3>
             <h4>A seguir:</h4>
             <h6 id="next"></h6>
-            <a class="btn btn-outline-primary" style="margin-top: 15px;" href="http://tvufg.org/grade/programacao">Confira a programação completa</a>
+            <a class="btn btn-primary" style="margin-top: 15px;" href="http://tvufg.org.br/grade/programacao" target="_blank">Confira a programação completa</a>
           </div>
           <div class="col-md-6 my-auto">
             <div class="col-md-12" style="height: 320px; background-color:#BDBDBD; border-radius: 6px;">
@@ -363,20 +363,23 @@
 
 
                     var nextPG =  retorno + 1;
-
                     var programa =  gradeJSON[nextPG];
                     programaTarget =  JSON.parse(programa);
 
-                    $("#2 .col-md-12 h3").html(programaTarget.titulo);
-                    $("#2 .col-md-12 h4").html(programaTarget.hora);
-                    $("#next").html(programaTarget.titulo);
+                    if (programaTarget != "") {
+                      $("#2 .col-md-12 h3").html(programaTarget.titulo);
+                      $("#2 .col-md-12 h4").html(programaTarget.hora);
+                      $("#next").html(programaTarget.titulo);
+                    }
 
                     nextPG++;
                     programa = gradeJSON[nextPG];
                     programaTarget =  JSON.parse(programa);
 
-                    $("#3 .col-md-12 h3").html(programaTarget.titulo);
-                    $("#3 .col-md-12 h4").html(programaTarget.hora);
+                    if (programaTarget != "") {
+                      $("#3 .col-md-12 h3").html(programaTarget.titulo);
+                      $("#3 .col-md-12 h4").html(programaTarget.hora);
+                    }
 
                   }
                 // }
