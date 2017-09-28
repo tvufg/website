@@ -16,7 +16,7 @@
     <!-- CSS para testes -->
     <style type="text/css">
       .slider.fullscreen {
-        height: 83vh !important;
+        height: 673px !important;
       }
 
       .slider .slides li img {
@@ -106,7 +106,12 @@
         .container {
           max-width: 1240px !important;
         }
+      }
 
+      @media (max-width: 1199px) {
+         span .col-md-6 {
+          padding-left: 15px !important;
+        }
       }
     </style>
   </head>
@@ -173,23 +178,23 @@
     <div class="container-fluid" style="height: 75px; background-color: rgba(0,0,0,0.6); position: relative; margin-top: 492px; z-index: 4; color: white;">
       <div class="container" style="height: inherit;">
         <div class="row" style="height: inherit;">
-          <section class="col-md-4">
+          <section id="1" class="col-md-4">
             <h3 class="" style="margin: 12px 0px; display: inline-block; text-transform: uppercase; font-size:45px; font-weight: 600;">No Ar</h3>
             <span class="col-md-6"style="display: inline-block; padding-left: 25px;">
-              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;">Conexoes</h3>
-              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;">14:00</h4>
+              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
+              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
             </span>
           </section>
-          <section class="col-md-3">
+          <section id="2" class="col-md-3">
             <span class="col-md-12"style="display: inline-block; top: 20%;">
-              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;">Conexoes</h3>
-              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;">14:00</h4>
+              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
+              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
             </span>
           </section>
-          <section class="col-md-3">
+          <section id="3" class="col-md-3">
             <span class="col-md-12"style="display: inline-block; top: 20%;">
-              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;">Conexoes</h3>
-              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;">14:00</h4>
+              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
+              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
             </span>
           </section>
           <div class="col-md-2">
@@ -211,6 +216,14 @@
     <div class="container-fluid" style="height: 500px; background-color: #EEEEEE;">
       <div class="container" style="height: inherit;">
         <div class="row" style="height: inherit;">
+          <div class="col-md-6 my-auto">
+            <p id="descricao"></p>
+            <h4>No Ar:</h4>
+            <h3 id="titulo" style="font-size: 28px; font-weight: 500;"></h3>
+            <h4>A seguir:</h4>
+            <h6 id="next"></h6>
+            <a class="btn btn-outline-primary" style="margin-top: 15px;" href="http://tvufg.org/grade/programacao">Confira a programação completa</a>
+          </div>
           <div class="col-md-6 my-auto">
             <div class="col-md-12" style="height: 320px; background-color:#BDBDBD; border-radius: 6px;">
               <i class="fa fa-play" style="font-size: 90px; margin-top: 19%; margin-left:45%;"></i>
@@ -255,6 +268,126 @@
       var seg     = data.getSeconds();        // 0-59
       var mseg    = data.getMilliseconds();   // 0-999
       var tz      = data.getTimezoneOffset(); // em minutos
+
+      if (dia < 10) {
+        dia = "0" + dia;
+      }
+
+
+      if (mes < 10) {
+        mes = "0" + (mes + 1);
+      }
+
+      // Montagem da string de consulta da data
+      var queryData = ano4 + mes + dia;
+
+      getGrade(queryData);
+
+
+      // Função que busca no banco a grade de programação
+      function getGrade(queryData) {
+
+        $.ajax({
+          url: 'get_grade.php',
+          type: "POST",
+          data: { getDia: queryData },
+          success: function(grade) {
+            // var gradeJSON = JSON.parse(grade);
+            // target = gradeJSON[0];
+            // programaTarget = JSON.parse(target);
+            // alert(programaTarget.hora);
+
+              if (grade != "") {
+
+                var gradeJSON = JSON.parse(grade);
+                var programa;
+
+                // Função que compara duas horas, informadas no formato string
+                function compararHora(hora1, hora2) {
+                  hora1 = hora1.split(":");
+                  hora2 = hora2.split(":");
+
+                  var d = new Date();
+                  var data1 = new Date(d.getFullYear(), d.getMonth(), d.getDate(), hora1[0], hora1[1]);
+                  var data2 = new Date(d.getFullYear(), d.getMonth(), d.getDate(), hora2[0], hora2[1]);
+
+                  return data1 > data2;
+                };
+
+                // Função que identifica e personaliza a exibição do programa que
+                // está no ar
+                function noAR() {
+
+                  hora    = data.getHours();
+                  min     = data.getMinutes();
+
+                  var stringHoraPC = hora + ":" + min;
+                  var stringHoraPG;
+
+                  target = gradeJSON[0];
+                  programaTarget = JSON.parse(target);
+
+                  if (compararHora(programaTarget.hora, stringHoraPC) == true) {
+                    return gradeJSON.length - 1;
+                  }
+
+                  for (i = 1; i < gradeJSON.length; i++) {
+                    target = gradeJSON[i];
+                    programaTarget = JSON.parse(target);
+                    stringHoraPG = programaTarget.hora;
+
+                    if (compararHora(stringHoraPG, stringHoraPC) == true) {
+                      return i - 1;
+                    }
+                  }
+
+                  if (i == gradeJSON.length) {
+                    return i - 1;
+                  }
+                }
+
+                // Chamada da função noAR onde o dia e a hora do PC do usuário são
+                // identificados e utilizados para difinir a exibição do programa
+                // que está no ar
+                // if(stringDataAtual == queryData) {
+                  var retorno = noAR();
+
+                  if (retorno >= 0) {
+                    var noARPG = gradeJSON[retorno];
+                    programaTarget = JSON.parse(noARPG);
+
+                    $("#1 .col-md-6 h3").html(programaTarget.titulo);
+                    $("#1 .col-md-6 h4").html(programaTarget.hora);
+                    $("#descricao").html(programaTarget.descricao);
+                    $("#titulo").html(programaTarget.titulo);
+
+
+                    var nextPG =  retorno + 1;
+
+                    var programa =  gradeJSON[nextPG];
+                    programaTarget =  JSON.parse(programa);
+
+                    $("#2 .col-md-12 h3").html(programaTarget.titulo);
+                    $("#2 .col-md-12 h4").html(programaTarget.hora);
+                    $("#next").html(programaTarget.titulo);
+
+                    nextPG++;
+                    programa = gradeJSON[nextPG];
+                    programaTarget =  JSON.parse(programa);
+
+                    $("#3 .col-md-12 h3").html(programaTarget.titulo);
+                    $("#3 .col-md-12 h4").html(programaTarget.hora);
+
+                  }
+                // }
+
+              } else {
+                // $('.panel-group').html('<div style="margin-top: 20%;"> <h2 style="text-align: center; font-family: opensans-light,Arial,sans-serif !important; font-weight: 700;">Não há itens para exibição</h2> </div>');
+              }
+          }
+        });
+      }
+
 
     });
     </script>
