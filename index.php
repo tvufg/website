@@ -102,6 +102,18 @@
         opacity: 0.2;
       }
 
+      .card {
+        margin-top: 10px;
+      }
+
+      .card:hover {
+        transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+        border-color: transparent;
+        box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+      }
+
       @media (min-width: 1200px) {
         .container {
           max-width: 1240px !important;
@@ -228,6 +240,74 @@
             <div class="col-md-12" style="height: 320px; background-color:#BDBDBD; border-radius: 6px;">
               <i class="fa fa-play" style="font-size: 90px; margin-top: 19%; margin-left:45%;"></i>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <h2 style="text-align: center;">Videos/Noticias</h2>
+      <div class="card-columns container" style="margin-top: 15px;">
+        <div class="card">
+          <img class="card-img-top" src="assets/img/daniel-h-tong-264918.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title that wraps to a new line</h4>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+        <div class="card p-3">
+          <blockquote class="blockquote mb-0 card-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card bg-primary p-3 text-center">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+            <footer class="blockquote-footer">
+              <small>
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="assets/img/ehud-neuhaus-392566.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="assets/img/jd-mason-340617.jpg" alt="Card image">
+        </div>
+        <div class="card p-3 text-right">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
       </div>
