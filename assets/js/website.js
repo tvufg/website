@@ -37,12 +37,15 @@ $(document).ready(function(){
     dia = "0" + dia;
   }
 
-  if (mes < 10) {
+  if (mes >= 9) {
     mes = "" + (mes + 1);
+  } else {
+    mes = "0" + (mes + 1);
   }
 
   // Montagem da string de consulta da data
   var queryData = ano4 + mes + dia;
+  console.log(queryData);
 
   getGrade(queryData);
 
