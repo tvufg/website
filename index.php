@@ -201,6 +201,35 @@
       </div>
     </div>
 
+    <footer class="footer" style="background-color: #212121; padding: 25px 25px; margin-top: 25px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="img-fluid" src="assets/img/logomark-white.png" alt="TV UFG">
+          </div>
+          <div class="col-md-6 navbar navbar-dark" style="padding-top: 0px;">
+            <ul class="navbar-nav mr-auto" style="flex-direction: unset !important;">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr style="border-top: 1px solid rgba(255, 255, 255, 1)"/>
+        <div class="row">
+          <div class="col-md-12">
+            <p style="color: white; text-align: center;">&copy; 2017 TV UFG</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.2.1.min.js"></script>
