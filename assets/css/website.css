@@ -1,0 +1,118 @@
+/*! =========================================================
+ * Website.css by Matheus Pimenta - http://github.com/matheuspiment
+ *
+ * Copyright 2017 TV UFG - http://tvufg.otg.br
+ * Available from http://github.com/tvufg/website
+ *
+ * ========================================================= */
+
+.slider.fullscreen {
+  height: 673px !important;
+}
+
+.slider .slides li img {
+  background-position: center center !important;
+}
+
+.bglayer {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  top: 0px;
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.slider .slides li .caption {
+  top: 40%;
+  z-index: 1;
+}
+
+.navbar {
+  z-index: 3;
+  background-color: transparent !important;
+  padding-top: 25px;
+}
+
+.search button {
+  border-radius: 30px;
+  height: 2.375rem;
+  width: 2.375rem;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+
+.search input {
+  border-radius: 30px;
+}
+
+.nav-link {
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+  font-weight: 500 !important;
+}
+
+.show-menu {
+  height: 100vh;
+  background-color: #212121 !important;
+}
+
+ul.indicators {
+  padding-left: 0px;
+}
+
+.slider.fullscreen ul.indicators {
+  bottom: 120px !important;
+}
+
+.col-md-4:before {
+  content: " ";
+  width: 12px;
+  height: 12px;
+  background-color: #FF0000;
+  position: absolute;
+  left: -20px;
+  top: 33px;
+  border-radius: 50%;
+  animation: ex4 0.7s infinite;
+  -moz-animation: ex4 0.7s infinite;
+  -webkit-animation: ex4 0.7s infinite;
+  box-shadow: 0px 0px 8px 0px red;
+}
+
+section:after {
+  content: " ";
+  top: 0;
+  right: 0px;
+  width: 1px;
+  height: 74px;
+  position: absolute;
+  background: #FFF;
+  opacity: 0.2;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+.card:hover {
+  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+  border-color: transparent;
+  box-shadow: 0px 12px 19px -7px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  span .col-md-6 {
+    padding-left: 15px !important;
+  }
+}
