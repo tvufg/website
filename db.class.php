@@ -3,16 +3,16 @@
 class db {
 
 	//host
-	private $host = 'rtve-3.mysql.uhserver.com';
+	private $host = 'localhost';
 
 	//usuario
-	private $usuario = 'rtve_3';
+	private $usuario = 'root';
 
 	//senha
-	private $senha = 'TVchannel15*Prog';
+	private $senha = '';
 
 	//banco de dados
-	private $database = 'rtve_3';
+	private $database = 'grade';
 
 	public function conecta_mysql(){
 
