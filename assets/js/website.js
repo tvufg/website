@@ -1,9 +1,5 @@
 /*! =========================================================
- * Website.js by Matheus Pimenta - http://github.com/matheuspiment
- *
- * Copyright 2017 TV UFG - http://tvufg.otg.br
- * Available from http://github.com/tvufg/website
- *
+ * Website.js 
  * ========================================================= */
 
 $(document).ready(function(){
