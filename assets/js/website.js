@@ -7,6 +7,7 @@
  * ========================================================= */
 
 $(document).ready(function(){
+  alert("oii");
   $('.slider').slider();
 
   // Em desenvolvimento
@@ -38,11 +39,12 @@ $(document).ready(function(){
   }
 
   if (mes < 10) {
-    mes = "0" + (mes + 1);
+    mes = "" + (mes + 1);
   }
 
   // Montagem da string de consulta da data
   var queryData = ano4 + mes + dia;
+  console.log(queryData);
 
   getGrade(queryData);
 
