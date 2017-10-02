@@ -7,7 +7,6 @@
  * ========================================================= */
 
 $(document).ready(function(){
-  alert("oii");
   $('.slider').slider();
 
   // Em desenvolvimento
@@ -44,7 +43,6 @@ $(document).ready(function(){
 
   // Montagem da string de consulta da data
   var queryData = ano4 + mes + dia;
-  console.log(queryData);
 
   getGrade(queryData);
 
