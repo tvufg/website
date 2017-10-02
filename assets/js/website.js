@@ -108,8 +108,8 @@ $(document).ready(function(){
             var noARPG = gradeJSON[retorno];
             programaTarget = JSON.parse(noARPG);
 
-            $("#1 .col-md-6 h3").html(programaTarget.titulo);
-            $("#1 .col-md-6 h4").html(programaTarget.hora);
+            $("#1 span h3").html(programaTarget.titulo);
+            $("#1 span h4").html(programaTarget.hora);
             $("#descricao").html(programaTarget.descricao);
             $("#titulo").html(programaTarget.titulo);
 
@@ -118,8 +118,8 @@ $(document).ready(function(){
             programaTarget =  JSON.parse(programa);
 
             if (programaTarget != "") {
-              $("#2 .col-md-12 h3").html(programaTarget.titulo);
-              $("#2 .col-md-12 h4").html(programaTarget.hora);
+              $("#2 h3").html(programaTarget.titulo);
+              $("#2 h4").html(programaTarget.hora);
               $("#next").html(programaTarget.titulo);
             }
 
@@ -128,8 +128,8 @@ $(document).ready(function(){
             programaTarget =  JSON.parse(programa);
 
             if (programaTarget != "") {
-              $("#3 .col-md-12 h3").html(programaTarget.titulo);
-              $("#3 .col-md-12 h4").html(programaTarget.hora);
+              $("#3 h3").html(programaTarget.titulo);
+              $("#3 h4").html(programaTarget.hora);
             }
           }
         } else {

@@ -77,33 +77,36 @@
     </div>
 
     <div class="container-fluid" style="height: 75px; background-color: rgba(0,0,0,0.6); position: relative; margin-top: 492px; z-index: 4; color: white;">
-      <div class="container" style="height: inherit;">
+      <div id="pg-aovivo"class="container" style="height: inherit;">
         <div class="row" style="height: inherit;">
-          <section id="1" class="col-md-4">
-            <h3 class="" style="margin: 12px 0px; display: inline-block; text-transform: uppercase; font-size:45px; font-weight: 600;">No Ar</h3>
-            <span class="col-md-6"style="display: inline-block; padding-left: 25px;">
+          <section id="1" class="col col-md-4 noAR">
+            <div class="row"style="height: 100%;">
+              <h3 class="col-md-6 col-sm-6 col-xs-6 header my-auto">No Ar</h3>
+              <span class="col my-auto"style="display: inline-block; padding-left: 25px;">
+                <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
+                <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
+              </span>
+            </div>
+          </section>
+          <section id="2" class="col-md-3 segunda" style="height: 100%;">
+            <span class="col-md-12 my-auto"style="display: block;">
               <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
               <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
             </span>
           </section>
-          <section id="2" class="col-md-3">
+          <section id="3" class="col-md-3 terceira">
             <span class="col-md-12"style="display: inline-block; top: 20%;">
               <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
               <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
             </span>
           </section>
-          <section id="3" class="col-md-3">
-            <span class="col-md-12"style="display: inline-block; top: 20%;">
-              <h3 style="font-size: 15px; line-height: 18px; margin: 0px; font-weight: 300; overflow: hidden; max-height: 36px;"></h3>
-              <h4 style="font-size: 17px; opacity: 0.5; font-weight: 100; margin-top: 6px; margin-bottom: 0px;"></h4>
-            </span>
-          </section>
-          <div class="col-md-2">
+          <div class="col">
             <span class="col-md-12"style="display: inline-block; top: 16%; padding: 0px;">
               <a href="http://tvufg.org.br/grade/programacao" style="font-size: 14px; color: white;">
                 <i class="fa fa-calendar" style="margin-right: 3px;"></i>
                 Programacao Completa
               </a>
+            </br>
               <a href="#" style="font-size: 14px; color: white;">
                 <i class="fa fa-signal" style="margin-right: 3px;"></i>
                 Como sintonizar a TV
