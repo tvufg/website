@@ -1,5 +1,5 @@
 /*! =========================================================
- * Website.js 
+ * Website.js
  * ========================================================= */
 
 $(document).ready(function(){
@@ -41,7 +41,6 @@ $(document).ready(function(){
 
   // Montagem da string de consulta da data
   var queryData = ano4 + mes + dia;
-  console.log(queryData);
 
   getGrade(queryData);
 
