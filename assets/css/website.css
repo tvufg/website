@@ -144,3 +144,23 @@ section:after {
     padding-left: 35px;
   }
 }
+
+@media (max-width: 661px) {
+  .noAR .header {
+    font-size: 22px;
+  }
+
+  .noar-pg {
+    font-size: 14px !important;
+  }
+
+  .links {
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 446px) {
+  .pg-link {
+    font-size: 8.5px !important;
+  }
+}
